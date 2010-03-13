@@ -1,0 +1,12 @@
+<h3><%= @day.date.strftime("%a %b %d, %Y") %></h3>
+<div class="thoughts">
+	<% for thought in @day.thoughts.reverse %>
+	<div class="thought" title="<%= thought.title %>">
+	    <a href="/day/<%= @day.id %>#thought-<%= thought.id %>" class="permalink" title="Permanent link to this thought"><span>Link</span></a>
+	    <a name="thought-<%= thought.id %>"></a>
+	    <p>
+	    <%= thought.value %>
+	    </p>
+	</div>
+<% end %>
+</div>

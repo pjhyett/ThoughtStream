@@ -1,0 +1,6 @@
+<% for @day in @days %>
+  <%= render(:partial => "thoughts", :object => @day)%>
+<% end %>
+<br/>
+<%= link_to 'Current thoughts', { :action => "index" } if @day_pages.current.previous %>
+<%= link_to 'Older thoughts &raquo;', { :page => @day_pages.current.next } if @day_pages.current.next %>

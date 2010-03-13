@@ -1,0 +1,22 @@
+<%= link_to 'New thought', :action => 'new' %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Posted</th>
+  </tr>
+  
+<% for thought in @thoughts.reverse %>
+  <tr>
+    <td><%= link_to thought.title, :action => 'edit', :id => thought.id %></td>
+    <td><%= thought.created_at %></td>
+    <td><%= link_to 'Show', :controller => 'days', :action => 'show', :id => thought.day.id, :anchor => "thought-#{thought.id}" %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => thought %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => thought }, :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

@@ -1,0 +1,9 @@
+<h1>Editing thought</h1>
+
+<%= start_form_tag :action => 'update', :id => @thought %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<%= end_form_tag %>
+
+<%= link_to 'Show', :action => 'show', :id => @thought %> |
+<%= link_to 'List', :action => 'list' %>

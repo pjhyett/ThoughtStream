@@ -1,0 +1,23 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+  xml.channel do
+
+    xml.title       "Thought Stream"
+    xml.link        url_for(:only_path => false, :controller => 'rss')
+    xml.pubDate     CGI.rfc1123_date(@thoughts.first.day.date) if @thoughts.any?
+    xml.description "Thought Stream (aka a tumblelog)"
+
+    @thoughts.each do |thought|
+      xml.item do
+        xml.title       thought.title
+        xml.link        url_for(:only_path => false, :controller => 'days', :action => 'show', :id => thought.day.id, :anchor => "thought-#{thought.id}")
+        xml.description thought.value
+        xml.pubDate     CGI.rfc1123_date(thought.created_at)
+        xml.guid        url_for(:only_path => false, :controller => 'days', :action => 'show', :id => "#{thought.day.id}-#{thought.id}")
+        xml.author      "#{thought.user.login} <your@email.com>"
+      end
+    end
+
+  end
+end

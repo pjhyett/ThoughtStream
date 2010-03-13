@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>ThoughtStream</title>
+  <%= stylesheet_link_tag 'thoughts' %>
+  <link rel="alternate" type="application/rss+xml" title="Thought Stream" href="http://feeds.feedburner.com/thoughtstream">
+</head>
+<body>
+<div id="container">
+  <%= link_to(image_tag("name.gif"), :controller => "days", :action => "index" ) %>
+  <div id="sidebar">
+  </div>
+  <div id="content">
+    <%= @content_for_layout %>
+  </div>
+</div>
+</body>
+</html>

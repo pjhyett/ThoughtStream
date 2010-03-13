@@ -1,0 +1,86 @@
+body { 
+  background-color: #fff; 
+  color: #333;
+  background-image: url("/images/divider.gif");
+  background-repeat: repeat-y;
+  background-position: 450px 0px;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+  margin-right: 30px;
+}
+
+img { border: 0px; }
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+#container {
+	width: 760px;
+}
+
+#content {
+	padding-left: 10px;
+	width: 475px;
+}
+ 
+#sidebar {
+	float: right;
+	width: 250px;
+}
+
+.thoughts {
+	margin-left: 30px;
+	margin-right: 25px;
+}
+
+.thought a.permalink {
+  position: absolute;
+  padding: 3px 5px 3px 5px;
+  z-index: 2;
+  left: 450px;
+}
+
+.thought > a.permalink {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  width: 50px;
+  height: 28px;
+  left: 455px;
+  
+  background: none;
+  background-image: url("/images/permalink.gif");
+  background-repeat: no-repeat;
+  background-position: 0px 4px;
+}
+
+.thought > a.permalink span {
+  display: none;
+}
+
+.thought:hover a.permalink,
+.thought:hover a.permalink:hover {
+  visibility: visible;
+  display: block;
+}
+
+blockquote {
+	background: url('/images/blockquote.gif') no-repeat 0 2px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #666;
+  padding-left: 23px;
+	margin-left: -23px;
+}
